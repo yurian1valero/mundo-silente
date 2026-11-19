@@ -1,0 +1,533 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Mundo Silente - Aprende Lenguaje de Señas Colombiana (LSC)</title> 
+    <link rel="stylesheet" href="style.css"> 
+    <!-- Iconos de FontAwesome --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"> 
+    <!-- Fuentes de Google --> 
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet"> 
+</head> 
+<body> 
+
+    <!-- Cabecera y Navegación --> 
+    <header class="header"> 
+        <div class="container nav-container"> 
+            <div class="logo"> 
+                <i class="fa-solid fa-hands-asl-interpreting"></i> 
+                <span>Mundo Silente</span> 
+            </div> 
+            <nav class="nav"> 
+                <a href="#inicio" class="nav-link" data-target="vista-inicio">Inicio</a> 
+                <a href="#modulos" class="nav-link" data-target="vista-modulos">Aprende</a> 
+                <a href="#modulos" class="nav-link" data-target="vista-modulos">Módulos</a> 
+                <a href="#contacto" class="nav-link" data-target="vista-inicio">Contacto</a> 
+            </nav>
+            <!-- Botón de Inicio de Sesión con Firebase -->
+            <div class="auth-container">
+                <button id="btnLoginFirebase" class="btn-nav">
+                    <i class="fa-brands fa-google"></i> <span id="authText">Iniciar Sesión</span>
+                </button>
+            </div> 
+        </div> 
+    </header> 
+
+    <!-- ================= VISTA 1: INICIO ================= -->
+    <div id="vista-inicio" class="vista active-view">
+        <!-- Sección Hero (Inicio) --> 
+        <section class="hero"> 
+            <div class="container hero-content"> 
+                <div class="hero-text"> 
+                    <h1>Conecta sin palabras, comunica con el corazón</h1> 
+                    <p>Descubre el Lenguaje de Señas Colombiana (LSC) de una forma amigable, interactiva y diseñada para todos.</p> 
+                    <a href="#modulos" class="btn-primary nav-link" data-target="vista-modulos"><i class="fa-solid fa-graduation-cap"></i> Empieza a Aprender</a> 
+                </div> 
+                <div class="hero-icon-box"> 
+                    <i class="fa-solid fa-heart-circle-check"></i> 
+                </div> 
+            </div> 
+        </section> 
+
+        <!-- Sección Aprende (Características) --> 
+        <section class="features container"> 
+            <h2>¿Por qué aprender LSC con nosotros?</h2> 
+            <div class="grid-features"> 
+                <div class="card"> 
+                    <div class="icon-wrapper"><i class="fa-solid fa-hand"></i></div> 
+                    <h3>Señas Cotidianas</h3> 
+                    <p>Aprende las expresiones y señas más usadas en el día a día en Colombia.</p> 
+                </div> 
+                <div class="card"> 
+                    <div class="icon-wrapper"><i class="fa-solid fa-puzzle-piece"></i></div> 
+                    <h3>A tu Ritmo</h3> 
+                    <p>Lecciones cortas, interactivas y diseñadas para que avances sin presiones.</p> 
+                </div> 
+                <div class="card"> 
+                    <div class="icon-wrapper"><i class="fa-solid fa-earth-americas"></i></div> 
+                    <h3>Cultura Local</h3> 
+                    <p>Adaptado 100% al contexto, giros y expresiones de la comunidad sorda en Colombia.</p> 
+                </div> 
+            </div> 
+        </section> 
+    </div>
+
+    <!-- ================= VISTA 2: MÓDULOS ================= -->
+    <div id="vista-modulos" class="vista" style="display: none;">
+        <section class="modules" style="padding: 60px 0;"> 
+            <div class="container"> 
+                <h2>Nuestros Módulos de Aprendizaje</h2> 
+                <p style="text-align: center; margin-bottom: 40px; color: var(--text-dark);">Selecciona un nivel o herramienta interactiva para comenzar tu práctica:</p>
+                <div class="grid-modules"> 
+                    <div class="module-card"> 
+                        <i class="fa-solid fa-hand-spock"></i> 
+                        <h3>Nivel 1: El Abecedario</h3> 
+                        <p>Domina el deletreo manual y las configuraciones básicas de las manos con audio y zoom.</p> 
+                        <button class="btn-secondary nav-link-btn" data-target="vista-abecedario">Ver Módulo</button> 
+                    </div> 
+                    <div class="module-card"> 
+                        <i class="fa-solid fa-keyboard"></i> 
+                        <h3>Práctica: Deletreo Interactivo</h3> 
+                        <p>Escribe una palabra y descubre cómo se compone letra por letra en LSC.</p> 
+                        <button class="btn-secondary nav-link-btn" data-target="vista-traductor">Probar Traductor</button> 
+                    </div> 
+                    <div class="module-card"> 
+                        <i class="fa-solid fa-hashtag"></i> 
+                        <h3>Nivel 3: Los Números (0 al 9)</h3> 
+                        <p>Aprende las señas para los números básicos de forma visual y con soporte de audio.</p> 
+                        <button class="btn-secondary nav-link-btn" data-target="vista-numeros">Ver Módulo</button> 
+                    </div> 
+                    <!-- NUEVO MÓDULO: MEMORAMA -->
+                    <div class="module-card"> 
+                        <i class="fa-solid fa-brain"></i> 
+                        <h3>Minijuego: Memorama LSC</h3> 
+                        <p>Pon a prueba tu memoria emparejando la imagen de la seña con su respectiva letra.</p> 
+                        <button class="btn-secondary nav-link-btn" data-target="vista-memorama">Jugar Memorama</button> 
+                    </div> 
+                </div> 
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="btn-primary nav-link-btn" data-target="vista-inicio"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+                </div>
+            </div> 
+        </section> 
+    </div>
+
+    <!-- ================= VISTA 3: ABECEDARIO ================= -->
+    <div id="vista-abecedario" class="vista" style="display: none;">
+        <section class="alphabet"> 
+            <div class="container"> 
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <button class="btn-secondary nav-link-btn" data-target="vista-modulos"><i class="fa-solid fa-arrow-left"></i> Volver a Módulos</button>
+                    <!-- Botón Global para silenciar/activar voz -->
+                    <button id="btnToggleAudio" class="btn-secondary" style="background-color: var(--accent); color: var(--white);">
+                        <i class="fa-solid fa-volume-high" id="audioIconState"></i> <span id="audioAsText">Audio Activado</span>
+                    </button>
+                </div>
+                <h2>Nivel 1: El Abecedario en LSC</h2> 
+                <p class="alphabet-intro">Haz clic en la tarjeta para verla en grande o usa el botón de micrófono/audio en cada letra para escuchar su pronunciación.</p> 
+                
+                <div class="grid-alphabet"> 
+                    <!-- Las 27 letras de la A a la Z -->
+                    <div class="letter-card" tabindex="0" role="button" data-letter="a"> 
+                        <div class="letter-img"><img src="img/abecedario/a.png" alt="Seña de la letra A en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">A</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="A"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="b"> 
+                        <div class="letter-img"><img src="img/abecedario/b.png" alt="Seña de la letra B en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">B</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="B"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="c"> 
+                        <div class="letter-img"><img src="img/abecedario/c.png" alt="Seña de la letra C en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">C</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="C"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="d"> 
+                        <div class="letter-img"><img src="img/abecedario/d.png" alt="Seña de la letra D en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">D</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="D"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="e"> 
+                        <div class="letter-img"><img src="img/abecedario/e.png" alt="Seña de la letra E en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">E</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="E"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="f"> 
+                        <div class="letter-img"><img src="img/abecedario/f.png" alt="Seña de la letra F en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">F</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="F"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="g"> 
+                        <div class="letter-img"><img src="img/abecedario/g.png" alt="Seña de la letra G en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">G</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="G"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="h"> 
+                        <div class="letter-img"><img src="img/abecedario/h.png" alt="Seña de la letra H en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">H</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="H"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="i"> 
+                        <div class="letter-img"><img src="img/abecedario/i.png" alt="Seña de la letra I en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">I</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="I"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="j"> 
+                        <div class="letter-img"><img src="img/abecedario/j.png" alt="Seña de la letra J en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">J</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="J"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="k"> 
+                        <div class="letter-img"><img src="img/abecedario/k.png" alt="Seña de la letra K en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">K</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="K"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="l"> 
+                        <div class="letter-img"><img src="img/abecedario/l.png" alt="Seña de la letra L en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">L</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="L"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="m"> 
+                        <div class="letter-img"><img src="img/abecedario/m.png" alt="Seña de la letra M en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">M</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="M"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="n"> 
+                        <div class="letter-img"><img src="img/abecedario/n.png" alt="Seña de la letra N en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">N</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="N"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="enie"> 
+                        <div class="letter-img"><img src="img/abecedario/enie.png" alt="Seña de la letra Ñ en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">Ñ</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="Ñ"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="o"> 
+                        <div class="letter-img"><img src="img/abecedario/o.png" alt="Seña de la letra O en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">O</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="O"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="p"> 
+                        <div class="letter-img"><img src="img/abecedario/p.png" alt="Seña de la letra P en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">P</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="P"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="q"> 
+                        <div class="letter-img"><img src="img/abecedario/q.png" alt="Seña de la letra Q en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">Q</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="Q"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="r"> 
+                        <div class="letter-img"><img src="img/abecedario/r.png" alt="Seña de la letra R en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">R</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="R"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="s"> 
+                        <div class="letter-img"><img src="img/abecedario/s.png" alt="Seña de la letra S en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">S</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="S"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="t"> 
+                        <div class="letter-img"><img src="img/abecedario/t.png" alt="Seña de la letra T en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">T</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="T"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="u"> 
+                        <div class="letter-img"><img src="img/abecedario/u.png" alt="Seña de la letra U en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">U</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="U"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="v"> 
+                        <div class="letter-img"><img src="img/abecedario/v.png" alt="Seña de la letra V en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">V</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="V"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="w"> 
+                        <div class="letter-img"><img src="img/abecedario/w.png" alt="Seña de la letra W en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">W</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="W"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="x"> 
+                        <div class="letter-img"><img src="img/abecedario/x.png" alt="Seña de la letra X en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">X</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="X"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="y"> 
+                        <div class="letter-img"><img src="img/abecedario/y.png" alt="Seña de la letra Y en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">Y</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="Y"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="z"> 
+                        <div class="letter-img"><img src="img/abecedario/z.png" alt="Seña de la letra Z en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">Z</span> 
+                            <button class="btn-speak" title="Escuchar letra" data-letra="Z"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                </div> 
+                <p class="alphabet-credit">Imágenes basadas en el póster "Lengua de Señas Colombiana LSC" de dado – diseño para todos (dado.com.co), adaptadas visualmente.</p> 
+            </div> 
+        </section> 
+    </div>
+
+    <!-- ================= VISTA 4: TRADUCTOR INTERACTIVO ================= -->
+    <div id="vista-traductor" class="vista" style="display: none;">
+        <section class="alphabet" style="min-height: 80vh; display: flex; align-items: center;">
+            <div class="container" style="width: 100%;">
+                <div style="margin-bottom: 20px; text-align: left;">
+                    <button class="btn-secondary nav-link-btn" data-target="vista-modulos"><i class="fa-solid fa-arrow-left"></i> Volver a Módulos</button>
+                </div>
+                <h2>Módulo de Práctica: Deletreo Dactilológico</h2>
+                <p class="alphabet-intro">Escribe una palabra o frase corta para ver la secuencia visual de sus señas correspondientes en LSC.</p>
+                
+                <div class="interactive-box" style="max-width: 600px; margin: 0 auto; background: var(--white); padding: 30px; border-radius: 20px; box-shadow: 0 5px 20px rgba(125, 90, 80, 0.08);">
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <input type="text" id="textoUsuario" aria-label="Escribe una palabra o frase corta para deletrear en LSC" placeholder="Ej. Hola, Mama, LSC..." style="flex: 1; padding: 12px 20px; border: 1px solid var(--earth-sand); border-radius: 30px; font-family: 'Nunito', sans-serif; font-size: 1rem; outline: none;">
+                        <button id="btnDeletrear" class="btn-primary" style="border: none; cursor: pointer;">Deletrear</button>
+                    </div>
+                    <div id="resultadoSeñas" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 25px; min-height: 80px; align-items: center;">
+                        <!-- Las imágenes traducidas aparecerán aquí dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= VISTA 5: MÓDULO DE NÚMEROS (0 al 9) ================= -->
+    <div id="vista-numeros" class="vista" style="display: none;">
+        <section class="alphabet"> 
+            <div class="container"> 
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <button class="btn-secondary nav-link-btn" data-target="vista-modulos"><i class="fa-solid fa-arrow-left"></i> Volver a Módulos</button>
+                </div>
+                <h2>Nivel 3: Los Números (0 al 9) en LSC</h2> 
+                <p class="alphabet-intro">Haz clic en la tarjeta de cualquier número para verla en grande o usa el botón de audio para escuchar su pronunciación.</p> 
+                
+                <div class="grid-alphabet"> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="0"> 
+                        <div class="letter-img"><img src="img/numeros/0.png" alt="Seña del número 0 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">0</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="0"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="1"> 
+                        <div class="letter-img"><img src="img/numeros/1.png" alt="Seña del número 1 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">1</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="1"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="2"> 
+                        <div class="letter-img"><img src="img/numeros/2.png" alt="Seña del número 2 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">2</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="2"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="3"> 
+                        <div class="letter-img"><img src="img/numeros/3.png" alt="Seña del número 3 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">3</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="3"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="4"> 
+                        <div class="letter-img"><img src="img/numeros/4.png" alt="Seña del número 4 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">4</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="4"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="5"> 
+                        <div class="letter-img"><img src="img/numeros/5.png" alt="Seña del número 5 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">5</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="5"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="6"> 
+                        <div class="letter-img"><img src="img/numeros/6.png" alt="Seña del número 6 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">6</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="6"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="7"> 
+                        <div class="letter-img"><img src="img/numeros/7.png" alt="Seña del número 7 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">7</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="7"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="8"> 
+                        <div class="letter-img"><img src="img/numeros/8.png" alt="Seña del número 8 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">8</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="8"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="9"> 
+                        <div class="letter-img"><img src="img/numeros/9.png" alt="Seña del número 9 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">9</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="9"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                </div> 
+                <p class="alphabet-credit">Módulo de Números en Lengua de Señas Colombiana (LSC).</p> 
+            </div> 
+        </section> 
+    </div>
+
+    <!-- ================= VISTA 6: MINIJUEGO MEMORAMA ================= -->
+    <div id="vista-memorama" class="vista" style="display: none;">
+        <section class="alphabet">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <button class="btn-secondary nav-link-btn" data-target="vista-modulos"><i class="fa-solid fa-arrow-left"></i> Volver a Módulos</button>
+                    <button id="btnRestartMemory" class="btn-primary" style="padding: 8px 18px; font-size: 0.9rem;"><i class="fa-solid fa-rotate-right"></i> Reiniciar Juego</button>
+                </div>
+                <h2>Minijuego: Memorama LSC</h2>
+                <p class="alphabet-intro">Encuentra las parejas relacionando la tarjeta con la **imagen de la seña** y su respectiva pareja.</p>
+                
+                <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; font-weight: 600; color: var(--earth-brown);">
+                    <div>Intentos: <span id="memoryAttempts">0</span></div>
+                    <div>Tiempo: <span id="memoryTimer">0s</span></div>
+                </div>
+
+                <!-- Tablero del Memorama -->
+                <div id="memoryBoard" class="memorama-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 15px; max-width: 600px; margin: 0 auto;">
+                    <!-- Las cartas se generan dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Ventana para ver la seña en grande --> 
+    <div id="lightbox" class="lightbox" aria-hidden="true"> 
+        <button class="lb-close" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button> 
+        <button class="lb-nav lb-prev" aria-label="Letra anterior"><i class="fa-solid fa-chevron-left"></i></button> 
+        <div class="lb-content"> 
+            <img id="lb-img" src="" alt=""> 
+            <span id="lb-letter"></span> 
+        </div> 
+        <button class="lb-nav lb-next" aria-label="Letra siguiente"><i class="fa-solid fa-chevron-right"></i></button> 
+    </div> 
+
+    <!-- Pie de página --> 
+    <footer id="contacto" class="footer"> 
+        <div class="container footer-content"> 
+            <div class="footer-logo"> 
+                <i class="fa-solid fa-hands-asl-interpreting"></i> 
+                <span>Mundo Silente</span> 
+            </div> 
+            <p>Construyendo un puente hacia la inclusión en Colombia.</p> 
+            <div class="social-icons"> 
+                <a href="#"><i class="fa-brands fa-instagram"></i></a> 
+                <a href="#"><i class="fa-brands fa-facebook"></i></a> 
+                <a href="#"><i class="fa-brands fa-youtube"></i></a> 
+            </div> 
+            <p class="copyright">&copy; 2026 Mundo Silente. Todos los derechos reservados.</p> 
+        </div> 
+    </footer> 
+
+    <!-- SDKs de Firebase (Modular v10) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "TU_API_KEY",
+            authDomain: "tu-proyecto.firebaseapp.com",
+            projectId: "tu-proyecto",
+            storageBucket: "tu-proyecto.appspot.com",
+            messagingSenderId: "tu-id",
+            appId: "tu-app-id"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        const btnLogin = document.getElementById('btnLoginFirebase');
+        const authText = document.getElementById('authText');
+
+        btnLogin.addEventListener('click', () => {
+            if (auth.currentUser) {
+                signOut(auth).then(() => {
+                    authText.textContent = "Iniciar Sesión";
+                }).catch((error) => console.error(error));
+            } else {
+                signInWithPopup(auth, provider).catch((error) => {
+                    console.error("Error de autenticación: ", error);
+                });
+            }
+        });
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                authText.textContent = user.displayName ? user.displayName.split(' ')[0] : "Usuario";
+            } else {
+                authText.textContent = "Iniciar Sesión";
+            }
+        });
+    </script>
+
+    <script src="script.js"></script> 
+</body> 
+</html>
