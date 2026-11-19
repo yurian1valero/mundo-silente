@@ -21,7 +21,7 @@
             </div> 
             <nav class="nav"> 
                 <a href="#inicio" class="nav-link" data-target="vista-inicio">Inicio</a> 
-                <a href="#aprende" class="nav-link" data-target="vista-inicio">Aprende</a> 
+                <a href="#modulos" class="nav-link" data-target="vista-modulos">Aprende</a> 
                 <a href="#modulos" class="nav-link" data-target="vista-modulos">Módulos</a> 
                 <a href="#contacto" class="nav-link" data-target="vista-inicio">Contacto</a> 
             </nav>
@@ -93,10 +93,17 @@
                         <button class="btn-secondary nav-link-btn" data-target="vista-traductor">Probar Traductor</button> 
                     </div> 
                     <div class="module-card"> 
-                        <i class="fa-solid fa-face-smile-beam"></i> 
-                        <h3>Nivel 3: Emociones y Expresión</h3> 
-                        <p>Comunícate de forma profunda expresando tus sentimientos y estados de ánimo.</p> 
-                        <a href="#" class="btn-secondary">Próximamente</a> 
+                        <i class="fa-solid fa-hashtag"></i> 
+                        <h3>Nivel 3: Los Números (0 al 9)</h3> 
+                        <p>Aprende las señas para los números básicos de forma visual y con soporte de audio.</p> 
+                        <button class="btn-secondary nav-link-btn" data-target="vista-numeros">Ver Módulo</button> 
+                    </div> 
+                    <!-- NUEVO MÓDULO: MEMORAMA -->
+                    <div class="module-card"> 
+                        <i class="fa-solid fa-brain"></i> 
+                        <h3>Minijuego: Memorama LSC</h3> 
+                        <p>Pon a prueba tu memoria emparejando la imagen de la seña con su respectiva letra.</p> 
+                        <button class="btn-secondary nav-link-btn" data-target="vista-memorama">Jugar Memorama</button> 
                     </div> 
                 </div> 
                 <div style="text-align: center; margin-top: 40px;">
@@ -340,6 +347,117 @@
         </section>
     </div>
 
+    <!-- ================= VISTA 5: MÓDULO DE NÚMEROS (0 al 9) ================= -->
+    <div id="vista-numeros" class="vista" style="display: none;">
+        <section class="alphabet"> 
+            <div class="container"> 
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <button class="btn-secondary nav-link-btn" data-target="vista-modulos"><i class="fa-solid fa-arrow-left"></i> Volver a Módulos</button>
+                </div>
+                <h2>Nivel 3: Los Números (0 al 9) en LSC</h2> 
+                <p class="alphabet-intro">Haz clic en la tarjeta de cualquier número para verla en grande o usa el botón de audio para escuchar su pronunciación.</p> 
+                
+                <div class="grid-alphabet"> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="0"> 
+                        <div class="letter-img"><img src="img/numeros/0.png" alt="Seña del número 0 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">0</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="0"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="1"> 
+                        <div class="letter-img"><img src="img/numeros/1.png" alt="Seña del número 1 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">1</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="1"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="2"> 
+                        <div class="letter-img"><img src="img/numeros/2.png" alt="Seña del número 2 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">2</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="2"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="3"> 
+                        <div class="letter-img"><img src="img/numeros/3.png" alt="Seña del número 3 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">3</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="3"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="4"> 
+                        <div class="letter-img"><img src="img/numeros/4.png" alt="Seña del número 4 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">4</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="4"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="5"> 
+                        <div class="letter-img"><img src="img/numeros/5.png" alt="Seña del número 5 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">5</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="5"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="6"> 
+                        <div class="letter-img"><img src="img/numeros/6.png" alt="Seña del número 6 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">6</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="6"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="7"> 
+                        <div class="letter-img"><img src="img/numeros/7.png" alt="Seña del número 7 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">7</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="7"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="8"> 
+                        <div class="letter-img"><img src="img/numeros/8.png" alt="Seña del número 8 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">8</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="8"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                    <div class="letter-card" tabindex="0" role="button" data-letter="9"> 
+                        <div class="letter-img"><img src="img/numeros/9.png" alt="Seña del número 9 en LSC" loading="lazy"></div> 
+                        <div class="card-footer-info">
+                            <span class="letter-name">9</span> 
+                            <button class="btn-speak" title="Escuchar número" data-letra="9"><i class="fa-solid fa-microphone"></i></button>
+                        </div>
+                    </div> 
+                </div> 
+                <p class="alphabet-credit">Módulo de Números en Lengua de Señas Colombiana (LSC).</p> 
+            </div> 
+        </section> 
+    </div>
+
+    <!-- ================= VISTA 6: MINIJUEGO MEMORAMA ================= -->
+    <div id="vista-memorama" class="vista" style="display: none;">
+        <section class="alphabet">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <button class="btn-secondary nav-link-btn" data-target="vista-modulos"><i class="fa-solid fa-arrow-left"></i> Volver a Módulos</button>
+                    <button id="btnRestartMemory" class="btn-primary" style="padding: 8px 18px; font-size: 0.9rem;"><i class="fa-solid fa-rotate-right"></i> Reiniciar Juego</button>
+                </div>
+                <h2>Minijuego: Memorama LSC</h2>
+                <p class="alphabet-intro">Encuentra las parejas relacionando la tarjeta con la **imagen de la seña** y su respectiva pareja.</p>
+                
+                <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; font-weight: 600; color: var(--earth-brown);">
+                    <div>Intentos: <span id="memoryAttempts">0</span></div>
+                    <div>Tiempo: <span id="memoryTimer">0s</span></div>
+                </div>
+
+                <!-- Tablero del Memorama -->
+                <div id="memoryBoard" class="memorama-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 15px; max-width: 600px; margin: 0 auto;">
+                    <!-- Las cartas se generan dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
+    </div>
+
     <!-- Ventana para ver la seña en grande --> 
     <div id="lightbox" class="lightbox" aria-hidden="true"> 
         <button class="lb-close" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button> 
@@ -373,7 +491,6 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-        // Configuración de Firebase (Coloca tus credenciales reales aquí si lo deseas)
         const firebaseConfig = {
             apiKey: "TU_API_KEY",
             authDomain: "tu-proyecto.firebaseapp.com",
